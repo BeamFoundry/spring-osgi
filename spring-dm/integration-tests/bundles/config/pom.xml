@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <parent>
+    <artifactId>org.beamfoundry.bundles.spring-dm.iandt-bundles</artifactId>
+    <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+    <version>1.3.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+  <artifactId>org.beamfoundry.bundles.spring-dm.iandt.config</artifactId>
+  <packaging>pom</packaging>
+  <name>Spring DM Test Bundle: Integration testing bundles for configuration options</name>
+  
+  <properties>
+    <!-- root, empty package -->
+    <!-- plugin not yet enabled to avoid further problems -->
+	<spring.osgi.import.pkg>!org.springframework.osgi.iandt, *</spring.osgi.import.pkg>
+	<spring.osgi.export.pkg>${pom.artifactId}*</spring.osgi.export.pkg>
+  </properties>
+  
+  <!-- shared dependencies -->
+  <dependencies>
+        <dependency>
+            <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+            <artifactId>org.beamfoundry.bundles.spring-dm-core</artifactId>
+            <version>${project.parent.version}</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+  </dependencies>
+  
+  <modules>
+    <module>no-publish</module>
+    <module>async-nowait</module>
+	<module>async-wait</module>
+    <module>sync-nowait</module>
+	<module>sync-tail</module>    
+    <module>sync-wait</module>
+  </modules>
+
+
+ <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+    
+ </build>
+
+   <!-- the above doesn't work, so we spell it out in full below
+  <reporting>
+   <excludeDefaults>true</excludeDefaults>
+   <plugins>
+     <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+       <artifactId>maven-project-info-reports-plugin</artifactId>
+       <inherited>true</inherited>
+       <reportSets>
+        <reportSet></reportSet>
+       </reportSets>
+     </plugin>   
+	<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+        <excludePackageNames>*</excludePackageNames>
+        </configuration>
+     </plugin>   
+   </plugins>
+  </reporting>
+  -->
+</project>

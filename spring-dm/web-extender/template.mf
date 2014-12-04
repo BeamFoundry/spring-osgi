@@ -1,0 +1,13 @@
+Excluded-Exports: 
+ org.springframework.osgi.*.internal.*
+Import-Package: 
+ org.springframework.osgi.web.deployer.tomcat;version="[1.2.2,1.2.2]";resolution:=optional,
+ org.springframework.osgi.web.deployer.jetty;version="[1.2.2,1.2.2]";resolution:=optional
+Import-Template: 
+ org.osgi.framework;version=1.3,
+ org.osgi.service.packageadmin;version=1.2,
+ org.apache.commons.logging.*;version=${logging.version.range},
+ org.springframework.osgi.*;version=${spring.osgi.version.range},
+ org.springframework.*;version=${spring.version.range},
+ *;resolution:=optional
+Unversioned-Imports: 

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework.osgi</groupId>
+	<artifactId>jetty.web.extender.fragment.osgi</artifactId>
+	<packaging>bundle</packaging>
+	<version>1.0.1</version>
+	<name>Jetty Spring-DM Web Fragment (OSGi version)</name>
+
+	<properties>
+		<export.packages>
+			*;version=${unpack.version}
+		</export.packages>
+		<import.packages>org.springframework.osgi.web.deployer.jetty</import.packages>
+		<include.resources>src/main/resources</include.resources>
+		<private.packages>!*</private.packages>
+		<embed-dep>*;scope=provided;type=!pom;inline=true</embed-dep>
+		<unpack-bundle>false</unpack-bundle>	
+		<unpack.version>${project.version}</unpack.version>
+		<symName.prefix>org.springframework.osgi.bundle</symName.prefix>
+		<symbolic.name>${pom.groupId}.${pom.artifactId}</symbolic.name>		
+	</properties>
+	
+	<build>
+		<extensions>
+			<extension>
+				<groupId>org.springframework.aws</groupId>
+				<artifactId>spring-aws-maven</artifactId>
+				<version>1.2.3</version>
+			</extension>
+		</extensions>
+	
+		<plugins>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+				  <archive>  
+					<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+					<manifestEntries>
+					  <Fragment-Host>org.springframework.osgi.web.extender</Fragment-Host>
+					</manifestEntries>
+				  </archive>
+				</configuration>
+			</plugin>
+			
+			<!-- OSGi Felix bundle plugin -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>1.2.0</version>
+				<configuration>
+					<unpackBundle>${unpack.bundle}</unpackBundle>
+					<obrRepository>NONE</obrRepository>
+					<instructions>
+						<Bundle-Name>${artifactId}</Bundle-Name>
+						<Bundle-SymbolicName>${symbolic.name}</Bundle-SymbolicName>
+						<Bundle-Description>${pom.name}</Bundle-Description>
+						<Import-Package>${import.packages}</Import-Package>
+						<Private-Package>${private.packages}</Private-Package>
+						<Include-Resource>${include.resources}</Include-Resource>
+						<Embed-Dependency>${embed-dep}</Embed-Dependency>
+						<_exportcontents>${export.packages}</_exportcontents>
+						<Implementation-Title>Spring Dynamic Modules Framework</Implementation-Title>
+						<Implementation-Version>${project.version}</Implementation-Version>
+						<Implementation-Vendor>Spring Dynamic Modules Framework</Implementation-Vendor>
+						<Implementation-Vendor-Id>org.springframework.osgi</Implementation-Vendor-Id>
+						<Jetty-Version>6.1.9</Jetty-Version>
+					</instructions>
+				</configuration>
+				<extensions>true</extensions>
+			</plugin>			
+		</plugins>
+	</build>
+	
+	<distributionManagement>
+		<repository>
+			<id>spring-osgi</id>
+			<name>Spring OSGi Friendly Repository</name>
+			<url>s3://maven.springframework.org/osgi</url>
+		</repository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>spring-ext</id>
+			<name>Spring External Dependencies Repository</name>
+			<url>http://springframework.svn.sourceforge.net/svnroot/springframework/repos/repo-ext</url>
+		</repository>
+		<repository>
+			<id>spring-external</id>
+			<name>Spring Portfolio External Repository</name>
+			<url>http://maven.springframework.org/external</url>
+		</repository>
+	</repositories>		
+	
+</project>

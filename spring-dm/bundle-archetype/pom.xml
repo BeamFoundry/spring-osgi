@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <parent>
+    <artifactId>org.beamfoundry.bundles.spring-dm</artifactId>
+    <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+    <version>1.3.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+  <artifactId>org.beamfoundry.bundles.spring-dm-bundle-archetype</artifactId>
+  <packaging>maven-plugin</packaging>
+  <name>Spring DM Archetype</name>
+  <description>Spring DM Maven2 Archetype</description>  
+  
+  <properties>
+    <findbugs.skip>true</findbugs.skip>
+  </properties>
+  
+  <build>
+    <resources>
+      <resource>
+        <filtering>false</filtering>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+  </build>
+</project>

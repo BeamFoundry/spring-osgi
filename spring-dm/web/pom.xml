@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>org.beamfoundry.bundles.spring-dm</artifactId>
+    <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+    <version>1.3.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+  <artifactId>org.beamfoundry.bundles.spring-dm-web</artifactId>
+  <packaging>bundle</packaging>
+  <name>Spring DM Web Support</name>
+  <description>
+  Spring/OSGi web support. Allows web applications to transparently run on OSGi platforms.
+  </description>
+  
+  
+  <properties>
+	<!-- jetty version used in the OSGi manifests -->
+    <jetty.osgi.version>6.1.9</jetty.osgi.version>
+    <catalina.osgi.version>5.5.23</catalina.osgi.version>
+    
+    <!-- jetty artifact version -->
+	<jetty.version>6.1.9</jetty.version>
+	<catalina.version>5.5.23-SNAPSHOT</catalina.version>
+
+
+	<!-- minimal servlet version -->
+	<servlet.version>3.0.1</servlet.version>
+    <javadoc.loc>${basedir}/../docs/src/javadoc</javadoc.loc>
+	
+
+    <spring.osgi.export>
+      !org.springframework.osgi.web.*internal*,
+      org.springframework.osgi.web*;version=${spring.osgi.export.version}
+    </spring.osgi.export>
+    
+  	<spring.osgi.private.pkg>
+		org.springframework.osgi.test.internal.util.jar*,
+		org.springframework.osgi.io.internal*,
+		org.springframework.osgi.web.*internal*
+	</spring.osgi.private.pkg>
+
+	<spring.osgi.import.pkg>
+		javax.servlet;version=${servlet.version},
+		org.mortbay*;version=${jetty.osgi.version};resolution:=optional,
+		org.apache.catalina*;version=${catalina.osgi.version};resolution:=optional,
+		org.apache.jasper;resolution:=optional,
+		org.apache.jasper.servlet;resolution:=optional,
+		org.osgi.service.packageadmin;version=1.2;resolution:=optional,
+		org.springframework.web*;version=${spring.base.version};resolution:=optional
+	</spring.osgi.import.pkg>
+	
+	<spring.osgi.symbolic.name>${symName.prefix}.web</spring.osgi.symbolic.name>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+      <artifactId>org.beamfoundry.bundles.spring-dm-core</artifactId>
+    </dependency>
+
+	<!-- required for JarUtils & co. -->
+    <dependency>
+      <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+      <artifactId>org.beamfoundry.bundles.spring-dm-test</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+
+	<!-- required for Depedency resolver -->
+    <dependency>
+      <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+      <artifactId>org.beamfoundry.bundles.spring-dm-io</artifactId>
+      <optional>true</optional>
+    </dependency>
+    
+   <dependency>
+      <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+      <artifactId>org.beamfoundry.bundles.spring-dm-mock</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+	<dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+	  <optional>true</optional>
+    </dependency>
+
+	<dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+	<dependency>
+      <groupId>org.aopalliance</groupId>
+      <artifactId>com.springsource.org.aopalliance</artifactId>
+    </dependency>    
+
+    <dependency>
+      <groupId>edu.emory.mathcs.backport</groupId>
+      <artifactId>com.springsource.edu.emory.mathcs.backport</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency> 
+
+   <!-- we add this dependencies so that the BND plugin can determine their versions -->
+   <!-- they are transitive so it makes sense to use a property instead -->
+   <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+	  <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+    </dependency>    
+   
+    <!-- Jetty -->
+    <dependency>
+      <groupId>org.mortbay.jetty</groupId>
+      <artifactId>jetty</artifactId>
+      <version>${jetty.version}</version>
+      <scope>provided</scope>
+	  <optional>true</optional>
+      <exclusions>
+      	<exclusion>
+          <groupId>org.mortbay.jetty</groupId>
+	      <artifactId>servlet-api-2.5</artifactId>
+      	</exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mortbay.jetty</groupId>
+      <artifactId>jetty-util</artifactId>
+      <version>${jetty.version}</version>
+      <scope>provided</scope>
+	  <optional>true</optional>
+    </dependency>
+    
+    <!-- Tomcat Catalina -->
+ 
+    <dependency>
+      <groupId>org.springframework.osgi</groupId>
+      <artifactId>catalina.osgi</artifactId>
+      <version>${catalina.version}</version>
+      <scope>provided</scope>
+	  <optional>true</optional>
+    </dependency>
+
+  </dependencies>
+
+</project>

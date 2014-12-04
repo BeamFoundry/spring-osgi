@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<artifactId>osgi-repo</artifactId>
+		<groupId>org.springframework.osgi</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework.osgi</groupId>
+	<artifactId>catalina.osgi</artifactId>
+	<packaging>bundle</packaging>
+	<version>5.5.23-SNAPSHOT</version>
+	<name>Apache Tomcat Catalina Container (OSGi version)</name>
+
+	<properties>
+		<unpack.version>5.5.23</unpack.version>
+		<export.package>
+		org.apache.tomcat.util.log,
+		!org.apache.tomcat.coyote*,
+		!org.apache.tomcat.jk*,
+		!org.apache.tomcat.tomcat*,
+		org.apache*</export.package>
+		
+		<include.resources>{maven-resources}</include.resources>
+		
+		<import.packages>
+		javax.servlet.resources,
+		javax.servlet.jsp.resources;resolution:=optional,
+		org.apache.jasper.servlet;resolution:=optional,
+		org.apache.jasper;resolution:=optional,
+		*;resolution:=optional 
+		</import.packages>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>tomcat</groupId>
+			<artifactId>catalina</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-modeler</groupId>
+			<artifactId>commons-modeler</artifactId>
+			<version>2.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>tomcat</groupId>
+			<artifactId>catalina-optional</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>		
+
+		<dependency>
+			<groupId>tomcat</groupId>
+			<artifactId>tomcat-util</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>		
+
+		<dependency>
+			<groupId>tomcat</groupId>
+			<artifactId>tomcat-http</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>		
+		
+		<dependency>
+			<groupId>tomcat</groupId>
+			<artifactId>tomcat-coyote</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>		
+
+		<dependency>
+			<groupId>tomcat</groupId>
+			<artifactId>naming-factory</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>		
+
+		<dependency>
+			<groupId>tomcat</groupId>
+			<artifactId>naming-factory-dbcp</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>		
+
+		<dependency>
+			<groupId>tomcat</groupId>
+			<artifactId>naming-resources</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>		
+
+		<dependency>
+			<groupId>tomcat</groupId>
+			<artifactId>servlets-default</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>		
+
+		<dependency>
+			<groupId>tomcat</groupId>
+			<artifactId>servlets-invoker</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>		
+
+	</dependencies>
+	
+	
+</project>

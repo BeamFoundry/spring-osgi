@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <parent>
+    <artifactId>org.beamfoundry.bundles.spring-dm.iandt.web-bundles</artifactId>
+    <groupId>org.beamfoundry.bundles.spring-dm.iandt.web</groupId>
+    <version>1.3.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.springframework.osgi.iandt.web</groupId>
+  <artifactId>org.beamfoundry.bundles.spring-dm.iandt.web.simple-servlet</artifactId>
+  <packaging>war</packaging>
+  <name>Spring DM Web Test: Simple Servlet Bundle</name>
+  
+</project>

@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>org.beamfoundry.bundles.spring-dm.iandt-bundles</artifactId>
+        <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+        <version>1.3.0-SNAPSHOT</version>
+    </parent>
+    
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+    <artifactId>org.beamfoundry.bundles.spring-dm.iandt.jdk-proxy</artifactId>
+    <packaging>jar</packaging>
+    <name>Spring DM Test Bundle: JDK proxy test</name>
+    <description>An OSGi bundle for JDK proxy testing</description>
+
+	<dependencies>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl104-over-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+      <scope>provided</scope>
+    </dependency>
+	</dependencies>
+	
+</project>
+

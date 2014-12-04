@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <parent>
+    <artifactId>org.beamfoundry.bundles.spring-dm.iandt</artifactId>
+    <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+    <version>1.3.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>org.beamfoundry.bundles.spring-dm.iandt-bundles</artifactId>
+  <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+  <packaging>pom</packaging>
+  <name>Spring DM Integration Testing Bundles</name>
+  
+  <properties>
+    <!-- root, empty package -->
+    <!-- plugin not yet enabled to avoid further problems -->
+	<spring.osgi.import.pkg>!org.springframework.osgi.iandt, *</spring.osgi.import.pkg>
+	<spring.osgi.export.pkg>${pom.artifactId}*</spring.osgi.export.pkg>
+  	<clover.skip>true</clover.skip>
+  </properties>
+  
+  <!-- shared dependencies -->
+  <dependencies>
+        <dependency>
+            <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+            <artifactId>org.beamfoundry.bundles.spring-dm-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+  </dependencies>
+  
+  <modules>
+    <module>simple-service</module>
+    <module>simple-service-identical</module>
+    <module>simple-service-2-identical</module>
+    <module>simple-service-2</module>
+    <module>simple-service-3</module>
+    <module>dependency-factory</module>
+    <module>trivial</module>
+    <module>trivial-test</module>
+    <module>lifecycle-test</module>
+    <module>service-listener</module>
+    <module>reference-test</module>
+    <module>proxy-destruction-test</module>
+    <module>dependency-test</module>
+    <module>cardinality0to1</module>
+    <module>scoped-bundle-a</module>    
+    <module>scoped-bundle-b</module>    
+    <module>scoped-bundle-common</module>
+    <module>io-fragment-1</module>    
+    <module>io-fragment-2</module>
+    <module>error</module>
+    <module>deadlock</module>
+    <module>configuration-test</module>
+    <module>extender-version</module>
+    <module>config</module>
+    <module>tccl</module>
+    <module>config-file-with-dots</module>
+    <module>proxy-creator</module>
+    <module>extender-fragment</module>
+    <module>jdk-proxy</module>
+    <module>extender-listener</module>
+    <module>namespace-own-consumer</module>
+    <module>export-import-dependency</module>
+    <module>web-bundles</module>
+  </modules>
+
+  <profiles>
+    <profile>
+      <id>jdk-1.5+</id>
+      <activation>
+        <jdk>!1.4</jdk>
+      </activation>
+      <modules>
+       <module>jdk5</module>
+	  </modules>
+   </profile>
+  </profiles>
+
+ <build>
+    <plugins>
+	   <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>    
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+    
+ </build>
+
+</project>

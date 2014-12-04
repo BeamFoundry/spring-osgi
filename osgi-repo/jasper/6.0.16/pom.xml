@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>org.springframework.osgi</groupId>
+		<artifactId>osgi-repo</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework.osgi</groupId>
+	<artifactId>jasper.osgi</artifactId>
+	<packaging>bundle</packaging>
+	<version>6.0.16-SNAPSHOT</version>
+	<name>Tomcat 6.x JSP Jasper (OSGi version)</name>
+
+	<properties>
+		<unpack.version>6.0.16</unpack.version>
+		<export.package>org.apache.jasper*</export.package>
+		<import.packages>
+		javax.servlet.jsp*;version=2.1,
+		javax.servlet.jsp.resources;version=2.1,
+		javax.servlet*;version=2.5,
+		javax.servlet.resources;version=2.5,
+		*;resolution:=optional
+		</import.packages>
+	</properties>
+
+	<dependencies>
+	  <dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>jasper</artifactId>
+		<version>${unpack.version}</version>
+		<scope>provided</scope>
+	  </dependency>
+
+	  <dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>jasper-jdt</artifactId>
+		<version>${unpack.version}</version>
+		<scope>provided</scope>
+	  </dependency>
+	  
+	  <dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>juli</artifactId>
+		<version>6.0.16</version>
+		<scope>provided</scope>
+	  </dependency>	  
+	  
+	  <dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>jasper-el</artifactId>
+		<version>6.0.16</version>
+		<scope>provided</scope>
+	  </dependency>	  
+
+			  
+	</dependencies>
+</project>

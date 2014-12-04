@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework.osgi</groupId>
+	<artifactId>osgi-repo</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>OSGi repo directives</name>
+
+	<properties>
+<!-- Default visibility -->
+		<export.packages>
+			${export.package}*;version=${unpack.version}
+		</export.packages>
+		<import.packages>
+			*;resolution:=optional
+		</import.packages>
+		<include.resources>
+		</include.resources>
+		<private.packages>
+			!*
+		</private.packages>
+		<symName.prefix>org.springframework.osgi.bundle</symName.prefix>
+		<symbolic.name>${pom.groupId}.${pom.artifactId}</symbolic.name>
+		<embed-dep>*;scope=provided;type=!pom;inline=true</embed-dep>
+		<unpack-bundle>false</unpack-bundle>
+	</properties>
+
+	<!-- build only new modules -->
+	<!-- all modules disabled for now to prevent accidental builds that go into the repo -->
+	<modules>
+
+		<module>aop-alliance</module>
+		<module>asm</module>
+		<module>aspectj</module>
+		<module>backport-util-concurrent</module>
+		<module>c3p0</module>
+		<module>cglib</module>
+		<module>commons-attributes</module>
+		<module>commons-beanutils</module>
+		<module>commons-collections</module>
+		<module>commons-lang</module>
+		<module>hsqldb</module>
+		<module>jta</module>
+		<module>junit</module>
+		<module>log4j</module>
+		<module>mx4j</module>
+		<module>mysql-connector</module>
+		<module>portlet-api</module>
+		<module>struts</module>
+		<module>ant</module>	
+		
+		<module>jetty/etc</module>
+		<module>jetty/activator</module>
+		<module>jetty/web.extender.fragment</module>
+
+		<module>catalina/5.5.x</module>
+		<module>catalina/6.0.x</module>
+		<module>catalina/activator</module>
+		<module>el/commons-el</module>
+		<module>el/api</module>
+		<module>jstl/1.1.2</module>
+		<module>jsp-api/2.0</module>
+
+		<module>jsp-api/2.1</module>
+		<module>jstl/1.2</module>
+		<module>servlet-api/2.4</module>
+		<module>servlet-api/2.5</module>
+		<module>jasper/5.5.23</module>
+		<module>jasper/6.0.16</module>
+		
+	</modules>
+
+	<build>
+		<extensions>
+			<extension>
+				<groupId>org.springframework.aws</groupId>
+				<artifactId>spring-aws-maven</artifactId>
+				<version>1.2.3</version>
+			</extension>
+		</extensions>
+
+		<plugins>
+			<!-- OSGi Felix bundle plugin -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>1.2.0</version>
+				<configuration>
+					<unpackBundle>${unpack.bundle}</unpackBundle>
+					<obrRepository>NONE</obrRepository>
+					<instructions>
+						<Bundle-Name>${artifactId}</Bundle-Name>
+						<Bundle-SymbolicName>${symbolic.name}</Bundle-SymbolicName>
+						<Bundle-Description>${pom.name}</Bundle-Description>
+						<Import-Package>${import.packages}</Import-Package>
+						<Private-Package>${private.packages}</Private-Package>
+						<Include-Resource>${include.resources}</Include-Resource>
+						<Embed-Dependency>${embed-dep}</Embed-Dependency>
+						<_exportcontents>${export.packages}</_exportcontents>
+						<Implementation-Title>Spring Dynamic Modules Framework</Implementation-Title>
+						<Implementation-Version>${unpack.version}</Implementation-Version>
+						<Implementation-Vendor>Spring Dynamic Modules Framework</Implementation-Vendor>
+						<Implementation-Vendor-Id>org.springframework.osgi</Implementation-Vendor-Id>
+					</instructions>
+				</configuration>
+				<extensions>true</extensions>
+			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.4</version>
+            </plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>spring-osgi</id>
+			<name>Spring OSGi Friendly Repository</name>
+			<url>s3://maven.springframework.org/osgi</url>
+		</repository>
+	</distributionManagement>
+
+<!-- Remove the plugin repository when no longer using the snapshot -->
+	<pluginRepositories>
+		<pluginRepository>
+			<id>felix-snapshot</id>
+			<name>Felix Snapshot Repository</name>
+			<url>http://repository.ops4j.org/mvn-snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<repositories>
+		<!-- This repository needs to move to S3 -->
+		<repository>
+			<id>spring-ext</id>
+			<name>Spring External Dependencies Repository</name>
+			<url>http://springframework.svn.sourceforge.net/svnroot/springframework/repos/repo-ext</url>
+		</repository>
+		<repository>
+			<id>spring-external</id>
+			<name>Spring Portfolio External Repository</name>
+			<url>http://maven.springframework.org/external</url>
+		</repository>
+	</repositories>
+</project>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<artifactId>osgi-repo</artifactId>
+		<groupId>org.springframework.osgi</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework.osgi</groupId>
+	<artifactId>commons-el.osgi</artifactId>
+	<packaging>bundle</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>Commons EL (OSGi version)</name>
+
+	<properties>
+		<unpack.version>1.0</unpack.version>
+		<export.package>*</export.package>
+		<!-- jsp 2.0/servlet 2.4 required -->
+		<import.packages>
+		javax.servlet.jsp*;version=2.0,
+		javax.servlet*;version=2.4,
+		*
+		</import.packages>
+	</properties>
+
+	<dependencies>
+	  <dependency>
+		<groupId>commons-el</groupId>
+		<artifactId>commons-el</artifactId>
+		<version>1.0</version>
+		<scope>provided</scope>
+	  </dependency>
+	</dependencies>
+</project>

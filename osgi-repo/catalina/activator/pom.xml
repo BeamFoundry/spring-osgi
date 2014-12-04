@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework.osgi</groupId>
+	<artifactId>catalina.start.osgi</artifactId>
+	<packaging>bundle</packaging>
+	<version>1.0.0</version>
+	<name>Tomcat Catalina OSGi Activator</name>
+
+	<properties>
+		<unpack.version>5.5.23</unpack.version>
+		<private.packages>org.springframework.osgi.web.tomcat.internal</private.packages>
+		<embed-dep>start;scope=provided;inline=true</embed-dep>
+		<include.resources>src/main/resources</include.resources>
+		<unpack-bundle>true</unpack-bundle>
+		<import.packages>
+			org.apache.catalina*,
+			org.apache.naming.resources*,
+			org.osgi.framework;version=1.3,
+			org.osgi.service.url;version=1.0,
+			*;resolution:=optional
+		</import.packages>
+
+		<export.packages>
+			*;version=${unpack.version}
+		</export.packages>
+		<symName.prefix>org.springframework.osgi.bundle</symName.prefix>
+		<symbolic.name>${pom.groupId}.${pom.artifactId}</symbolic.name>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>tomcat</groupId>
+			<artifactId>catalina</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>tomcat</groupId>
+			<artifactId>naming-resources</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi_R4_core</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>			
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging-api</artifactId>
+			<version>1.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<!--		
+		<dependency>
+		  <groupId>org.springframework.osgi</groupId>
+		  <artifactId>mx4j.osgi</artifactId>
+		  <version>3.0.2-SNAPSHOT</version>
+		  <scope>test</scope>
+		</dependency>	
+		-->
+	</dependencies>
+
+	<build>
+		<extensions>
+			<extension>
+				<groupId>org.springframework.aws</groupId>
+				<artifactId>spring-aws-maven</artifactId>
+				<version>1.2.3</version>
+			</extension>
+		</extensions>
+
+		<plugins>
+			<plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <configuration>
+				<source>1.4</source>
+				<target>1.4</target>
+				<debug>true</debug>
+			  </configuration>
+			</plugin>
+					
+		
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+				  <archive>  
+					<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+					<manifestEntries>
+					  <Bundle-Activator>org.springframework.osgi.web.tomcat.internal.Activator</Bundle-Activator>
+					</manifestEntries>
+				  </archive>
+				</configuration>
+			</plugin>
+			<!-- OSGi Felix bundle plugin -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>1.2.0</version>
+				<configuration>
+					<unpackBundle>${unpack.bundle}</unpackBundle>
+					<obrRepository>NONE</obrRepository>
+					<instructions>
+						<Bundle-Name>${artifactId}</Bundle-Name>
+						<Bundle-SymbolicName>${symbolic.name}</Bundle-SymbolicName>
+						<Bundle-Description>${pom.name}</Bundle-Description>
+						<Import-Package>${import.packages}</Import-Package>
+						<Private-Package>${private.packages}</Private-Package>
+						<Include-Resource>${include.resources}</Include-Resource>
+						<Embed-Dependency>${embed-dep}</Embed-Dependency>
+						<_exportcontents>${export.packages}</_exportcontents>
+						<Implementation-Title>Spring Dynamic Modules Framework</Implementation-Title>
+						<Implementation-Version>${project.version}</Implementation-Version>
+						<Implementation-Vendor>Spring Dynamic Modules Framework</Implementation-Vendor>
+						<Implementation-Vendor-Id>org.springframework.osgi</Implementation-Vendor-Id>
+						<Apache-Tomcat-Version>${unpack.version}</Apache-Tomcat-Version>
+					</instructions>
+				</configuration>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<distributionManagement>
+		<repository>
+			<id>spring-osgi</id>
+			<name>Spring OSGi Friendly Repository</name>
+			<url>s3://maven.springframework.org/osgi</url>
+		</repository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>spring-ext</id>
+			<name>Spring External Dependencies Repository</name>
+			<url>http://springframework.svn.sourceforge.net/svnroot/springframework/repos/repo-ext</url>
+		</repository>
+	</repositories>	
+</project>

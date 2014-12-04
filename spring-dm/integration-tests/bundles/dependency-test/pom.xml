@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>org.beamfoundry.bundles.spring-dm.iandt-bundles</artifactId>
+        <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+        <version>1.3.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+    <artifactId>org.beamfoundry.bundles.spring-dm.iandt.dependencies</artifactId>
+    <packaging>jar</packaging>
+    <name>Spring DM Test Bundle: Spring context dependencies test bundle</name>
+    <description>An OSGi bundle that tests the service dependency mechanism</description>
+
+    <dependencies>
+  
+        <dependency>
+            <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+            <artifactId>org.beamfoundry.bundles.spring-dm.iandt.simple-service</artifactId>
+            <version>${project.parent.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+            <artifactId>org.beamfoundry.bundles.spring-dm.iandt.simple-service2</artifactId>
+            <version>${project.parent.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>
+

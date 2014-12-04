@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<artifactId>osgi-repo</artifactId>
+		<groupId>org.springframework.osgi</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework.osgi</groupId>
+	<artifactId>catalina.osgi</artifactId>
+	<packaging>bundle</packaging>
+	<version>6.0.16-SNAPSHOT</version>
+	<name>Apache Tomcat Catalina Container (OSGi version)</name>
+
+	<properties>
+		<unpack.version>6.0.16</unpack.version>
+		<export.package>
+		org.apache.tomcat.util.log,
+		!org.apache.tomcat.coyote*,
+		!org.apache.tomcat.jk*,
+		!org.apache.tomcat.tomcat*,
+		org.apache*</export.package>
+		
+		<include.resources>{maven-resources}</include.resources>
+		
+		<import.packages>
+		javax.servlet.resources,
+		javax.servlet.jsp.resources;resolution:=optional,
+		org.apache.jasper.servlet;resolution:=optional,
+		org.apache.jasper;resolution:=optional,
+		*;resolution:=optional 
+		</import.packages>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>catalina</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>juli</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- adjust this so we don't include the entire coyote jar -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>coyote</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- consider externalizing the Annotations -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>annotations-api</artifactId>
+			<version>${unpack.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+	
+	
+</project>

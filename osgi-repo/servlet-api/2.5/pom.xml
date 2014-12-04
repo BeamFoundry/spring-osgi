@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<artifactId>osgi-repo</artifactId>
+		<groupId>org.springframework.osgi</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework.osgi</groupId>
+	<artifactId>servlet-api.osgi</artifactId>
+	<packaging>bundle</packaging>
+	<version>2.5-SNAPSHOT</version>
+	<name>Servlet API 2.5 (OSGi version)</name>
+
+	<properties>
+		<unpack.version>2.5</unpack.version>
+		<export.packages>javax.servlet*;version=${unpack.version}</export.packages>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
+	<repositories>
+	  <!-- use the dev.java.net repository to get a 1.4 compatible jar -->
+      <repository>
+        <id>dev-java-net-repository</id>
+        <name>Dev-Java-Net Repository</name>
+        <url>http://download.java.net/maven/1/</url>
+        <layout>legacy</layout>
+      </repository>
+    </repositories>
+    
+</project>

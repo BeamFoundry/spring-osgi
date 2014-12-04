@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<project>
+  <parent>
+    <artifactId>org.beamfoundry.bundles.spring-dm</artifactId>
+    <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+    <version>1.3.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+  <artifactId>org.beamfoundry.bundles.spring-dm-web-extender</artifactId>
+  <packaging>bundle</packaging>
+  <name>Spring DM Web Extender</name>
+  <description>
+  Spring DM web extender. Detects war bundles and deploys them into the configured web container.
+  </description>
+  
+  
+  <properties>
+    <javadoc.loc>${basedir}/../docs/src/javadoc</javadoc.loc>
+	
+
+    <spring.osgi.export>!*</spring.osgi.export>
+    
+  	<spring.osgi.private.pkg>
+		org.springframework.osgi.web.extender.internal*,
+		org.springframework.osgi.extender.internal.util*
+	</spring.osgi.private.pkg>
+
+	<spring.osgi.symbolic.name>${symName.prefix}.web.extender</spring.osgi.symbolic.name>
+	
+	<spring.osgi.import.pkg>
+		org.apache.commons.logging,
+		org.springframework.osgi.web.deployer.tomcat;version=${spring.osgi.import.version};resolution:=optional,
+		org.springframework.osgi.web.deployer.jetty;version=${spring.osgi.import.version};resolution:=optional
+	</spring.osgi.import.pkg>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+      <artifactId>org.beamfoundry.bundles.spring-dm-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+      <artifactId>org.beamfoundry.bundles.spring-dm-web</artifactId>
+    </dependency>
+    <!-- used for getting Counter util in -->
+    <dependency>
+      <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+      <artifactId>org.beamfoundry.bundles.spring-dm-extender</artifactId>
+	  <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+      <artifactId>org.beamfoundry.bundles.spring-dm-mock</artifactId>
+      <scope>test</scope>
+    </dependency>
+   </dependencies>
+
+</project>

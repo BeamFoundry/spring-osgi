@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <parent>
+    <artifactId>org.beamfoundry.bundles.spring-dm</artifactId>
+    <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+    <version>1.3.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+  <artifactId>org.beamfoundry.bundles.spring-dm.iandt</artifactId>
+  <packaging>pom</packaging>
+  <name>Spring DM Integration Tests Module</name>
+  
+  <properties>
+	<clover.skip>true</clover.skip>
+	<bundlor.enabled>true</bundlor.enabled>
+  </properties>
+  
+  <modules>
+    <module>bundles</module>
+    <module>tests</module>
+  </modules>
+  
+  <build>
+	  <plugins>
+		  <plugin>
+			<artifactId>maven-deploy-plugin</artifactId>
+			<configuration>
+			  <skip>true</skip>
+			</configuration>
+		  </plugin>
+	  </plugins>
+  </build>
+  
+  <profiles>
+    <profile>
+      <id>jdk-1.5+</id>
+        <activation>
+          <jdk>!1.4</jdk>
+        </activation>
+        <modules>
+          <module>tests-tiger</module>
+        </modules>
+    </profile>
+  </profiles>
+
+</project>

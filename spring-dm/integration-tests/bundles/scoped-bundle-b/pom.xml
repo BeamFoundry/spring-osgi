@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>org.beamfoundry.bundles.spring-dm.iandt-bundles</artifactId>
+        <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+        <version>1.3.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+    <artifactId>org.beamfoundry.bundles.spring-dm.iandt.scoped-bundle-b</artifactId>
+	<packaging>jar</packaging>
+    <name>Spring DM Test Bundle: Bundle scoping test bundle - B</name>
+    <description>An OSGi bundle which tests 'bundle' scoped beans</description>
+
+    <dependencies>
+
+    </dependencies>
+</project>
+

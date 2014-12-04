@@ -1,0 +1,15 @@
+<?xml version="1.0"?><project>
+  <parent>
+    <artifactId>org.beamfoundry.bundles.spring-dm.iandt-bundles</artifactId>
+    <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+    <version>1.3.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+  <artifactId>org.beamfoundry.bundles.spring-dm.iandt.trivial</artifactId>
+  <packaging>jar</packaging>
+  <name>Spring DM Test Bundle: Trivial OSGi bundle</name>
+  <description>An OSGi bundle that contains and exports just one class
+  </description>
+  
+</project>

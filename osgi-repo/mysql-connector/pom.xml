@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<artifactId>osgi-repo</artifactId>
+		<groupId>org.springframework.osgi</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework.osgi</groupId>
+	<artifactId>mysql-connector-java.osgi</artifactId>
+	<packaging>bundle</packaging>
+	<version>3.1.14-SNAPSHOT</version>
+	<name>mysql-connector-java (OSGi version)</name>
+
+	<properties>
+		<unpack.version>3.1.14</unpack.version>
+		<export.packages>
+			com.mysql*;version=${unpack.version},
+			org.gjt*;version=${unpack.version}
+		</export.packages>
+		<import.packages>
+			com.mchange*;resolution:=optional,
+			org.apache.log4j;resolution:=optional,
+			org.jboss*;resolution:=optional,
+			javax.naming*;resolution:=optional,
+			javax.net*;resolution:=optional,
+			*
+		</import.packages>
+  </properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>3.1.14</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <parent>
+    <artifactId>org.beamfoundry.bundles.spring-dm.iandt.web-bundles</artifactId>
+    <groupId>org.beamfoundry.bundles.spring-dm.iandt.web</groupId>
+    <version>1.3.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.beamfoundry.bundles.spring-dm.iandt.web</groupId>
+  <artifactId>org.beamfoundry.bundles.spring-dm.iandt.web.resources-only</artifactId>
+  <packaging>war</packaging>
+  <name>Spring DM Web Test: Static Resource Only Bundle</name>
+  
+</project>

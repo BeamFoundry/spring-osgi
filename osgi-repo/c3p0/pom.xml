@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<artifactId>osgi-repo</artifactId>
+		<groupId>org.springframework.osgi</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework.osgi</groupId>
+	<artifactId>c3p0.osgi</artifactId>
+	<packaging>bundle</packaging>
+	<version>0.9.1.2-SNAPSHOT</version>
+	<name>c3p0 (OSGi version)</name>
+
+	<properties>
+		<unpack.version>0.9.1.2</unpack.version>
+		<export.package>com.mchange*</export.package>
+		<import.packages>
+			javax.naming*;resolution:=optional,
+			org.apache.log4j*;resolution:=optional,
+			org.w3c.dom*;resolution:=optional,
+			*
+		</import.packages>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.1.2</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>

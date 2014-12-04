@@ -1,0 +1,17 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>org.beamfoundry.bundles.spring-dm.iandt-bundles</artifactId>
+        <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+        <version>1.3.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+    <artifactId>org.beamfoundry.bundles.spring-dm.iandt.simple-service3</artifactId>
+	<packaging>jar</packaging>
+    <name>Spring DM Test Bundle: Simple service test bundle 3</name>
+    <description>An OSGi bundle that provides yet another simple service</description>
+</project>
+

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>org.beamfoundry.bundles.spring-dm</artifactId>
+    <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+    <version>1.3.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+  <artifactId>org.beamfoundry.bundles.spring-dm-io</artifactId>
+  <packaging>bundle</packaging>
+  <name>Spring DM IO</name>
+  <description>
+  Spring DM IO abstract classes. Provides Resource, ResourceLoader and ResourcePatternResolver for OSGi environments.
+  </description>
+  
+ 
+  <properties>
+  
+    <javadoc.loc>${basedir}/../docs/src/javadoc</javadoc.loc>
+  
+    <spring.osgi.private.pkg>org.springframework.osgi.io.*internal*</spring.osgi.private.pkg>
+	<spring.osgi.export.pkg>!${spring.osgi.private.pkg}, org.springframework.osgi.io*</spring.osgi.export.pkg>
+	<spring.osgi.import.pkg>
+		org.osgi.service.packageadmin;version=1.2;resolution:=optional
+	</spring.osgi.import.pkg>
+	
+	<spring.osgi.symbolic.name>${symName.prefix}.io</spring.osgi.symbolic.name>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.beamfoundry.bundles.spring-dm</groupId>
+      <artifactId>org.beamfoundry.bundles.spring-dm-mock</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <scope>provided</scope>
+    </dependency> 
+  </dependencies>
+</project>

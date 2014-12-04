@@ -1,0 +1,136 @@
+=main INFO [servlet.SimpleServletTest] - Equinox OSGi Platform [3.2.2.R32x_v20070118] started
+=main WARN [servlet.SimpleServletTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [servlet.SimpleServletTest] - Shutting down OSGi platform
+=main INFO [lifecycle.LifecycleTest] - Equinox OSGi Platform [3.2.2.R32x_v20070118] started
+=main WARN [lifecycle.LifecycleTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [lifecycle.LifecycleTest] - Shutting down OSGi platform
+=main INFO [context.OsgiAppContextTest] - Equinox OSGi Platform [3.2.2.R32x_v20070118] started
+=main WARN [context.OsgiAppContextTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=main ERROR [context.OsgiAppContextTest] - cannot start bundle [spring-osgi-annotation (org.springframework.osgi.extensions.annotations)|file:/home/simon/.m2/repository/org/springframework/osgi/spring-osgi-annotation/1.2.2-SNAPSHOT/spring-osgi-annotation-1.2.2-SNAPSHOT.jar]
+org.osgi.framework.BundleException: The bundle could not be resolved. Reason: Missing Constraint: Import-Package: org.springframework.beans; version="[4.0.0,4.1.0)"
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:294)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:256)
+	at org.springframework.osgi.test.AbstractOsgiTests.startBundle(AbstractOsgiTests.java:341)
+	at org.springframework.osgi.test.AbstractOsgiTests.startup(AbstractOsgiTests.java:258)
+	at org.springframework.osgi.test.AbstractOsgiTests.prepareTestExecution(AbstractOsgiTests.java:374)
+	at org.springframework.osgi.test.AbstractOsgiTests.runBare(AbstractOsgiTests.java:203)
+	at org.springframework.osgi.test.AbstractOsgiTests$1.protect(AbstractOsgiTests.java:184)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at org.springframework.osgi.test.AbstractOsgiTests.run(AbstractOsgiTests.java:181)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:622)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:213)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:140)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:165)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:107)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:622)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:289)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1005)
+=Thread-0 INFO [context.OsgiAppContextTest] - Shutting down OSGi platform
+=main INFO [servicedependency.MultipleExportersDependingOnOneImporterTest] - Equinox OSGi Platform [3.2.2.R32x_v20070118] started
+=main WARN [servicedependency.MultipleExportersDependingOnOneImporterTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [servicedependency.MultipleExportersDependingOnOneImporterTest] - Shutting down OSGi platform
+=main INFO [taglib.CoreTaglibTest] - Equinox OSGi Platform [3.2.2.R32x_v20070118] started
+=main WARN [taglib.CoreTaglibTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [taglib.CoreTaglibTest] - Shutting down OSGi platform
+=main INFO [servlet.SimpleServletTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [servlet.SimpleServletTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [servlet.SimpleServletTest] - Shutting down OSGi platform
+=main INFO [lifecycle.LifecycleTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [lifecycle.LifecycleTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [lifecycle.LifecycleTest] - Shutting down OSGi platform
+=main INFO [context.OsgiAppContextTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [context.OsgiAppContextTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [context.OsgiAppContextTest] - Shutting down OSGi platform
+=main INFO [servicedependency.MultipleExportersDependingOnOneImporterTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [servicedependency.MultipleExportersDependingOnOneImporterTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [servicedependency.MultipleExportersDependingOnOneImporterTest] - Shutting down OSGi platform
+=main WARN [taglib.CoreTaglibTest] - **** org.springframework.osgi.iandt.web.taglib.CoreTaglibTest.testIndexPage disabled in this environment: Total disabled tests=1
+=main WARN [taglib.CoreTaglibTest] - **** org.springframework.osgi.iandt.web.taglib.CoreTaglibTest.testCoreTaglibJSP disabled in this environment: Total disabled tests=2
+=main WARN [taglib.CoreTaglibTest] - **** org.springframework.osgi.iandt.web.taglib.CoreTaglibTest.testXmlTaglibJSP disabled in this environment: Total disabled tests=3
+=main INFO [testingFramework.OsgiPlatformTest] - Felix OSGi Platform [1.4.1] started
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [testingFramework.OsgiPlatformTest] - Shutting down OSGi platform
+=main INFO [cycles.ExporterCycleTest] - Felix OSGi Platform [1.4.1] started
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [cycles.ExporterCycleTest] - Shutting down OSGi platform
+=main INFO [extender.ExtenderVersionTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [extender.ExtenderVersionTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [extender.ExtenderVersionTest] - Shutting down OSGi platform
+=main INFO [configopt.SyncWaitWithoutDependencyTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [configopt.SyncWaitWithoutDependencyTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [configopt.SyncWaitWithoutDependencyTest] - Shutting down OSGi platform
+=main INFO [proxycreator.ClassDependenciesVisibilityTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [proxycreator.ClassDependenciesVisibilityTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [proxycreator.ClassDependenciesVisibilityTest] - Shutting down OSGi platform
+=main INFO [context.PublishedInterfacesTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [context.PublishedInterfacesTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [context.PublishedInterfacesTest] - Shutting down OSGi platform
+=main INFO [testingFramework.BundleCreationTst] - Felix OSGi Platform [1.4.1] started
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [testingFramework.BundleCreationTst] - Shutting down OSGi platform
+=main INFO [tcclManagement.ServiceTcclTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [tcclManagement.ServiceTcclTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [tcclManagement.ServiceTcclTest] - Shutting down OSGi platform
+=main INFO [mavenArtifact.MavenArtifactLookupTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [mavenArtifact.MavenArtifactLookupTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [mavenArtifact.MavenArtifactLookupTest] - Shutting down OSGi platform
+=main INFO [extender.ExtenderTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [extender.ExtenderTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [extender.ExtenderTest] - Shutting down OSGi platform
+=main INFO [configopt.AsyncNoWaitTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [configopt.AsyncNoWaitTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [configopt.AsyncNoWaitTest] - Shutting down OSGi platform
+=main INFO [configopt.SyncNoWaitWithReverseQueueTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [configopt.SyncNoWaitWithReverseQueueTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [configopt.SyncNoWaitWithReverseQueueTest] - Shutting down OSGi platform
+=main INFO [referenceProxy.ReferenceInterruptTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [referenceProxy.ReferenceInterruptTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [referenceProxy.ReferenceInterruptTest] - Shutting down OSGi platform
+=main INFO [service.ServiceAvailableDuringUnregistrationTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [service.ServiceAvailableDuringUnregistrationTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [service.ServiceAvailableDuringUnregistrationTest] - Shutting down OSGi platform
+=main INFO [servicedependency.ExporterWithOptionalAndMandatoryImportersTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [servicedependency.ExporterWithOptionalAndMandatoryImportersTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [servicedependency.ExporterWithOptionalAndMandatoryImportersTest] - Shutting down OSGi platform
+=main INFO [io.BundleClassPathWildcardTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [io.BundleClassPathWildcardTest] - Security turned OFF
+=main INFO [io.BundleClassPathWildcardTest] - Installing no root cp bundle...
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [io.BundleClassPathWildcardTest] - Shutting down OSGi platform
+=main INFO [io.IoTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [io.IoTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [io.IoTest] - Shutting down OSGi platform
+=main INFO [io.BundleClassPathTest] - Felix OSGi Platform [1.4.1] started
+=main WARN [io.BundleClassPathTest] - Security turned OFF
+=main INFO [internal.LocalFileSystemMavenRepository] - Local Maven2 repository used: [/home/simon/.m2/repository]
+=Thread-0 INFO [io.BundleClassPathTest] - Shutting down OSGi platform

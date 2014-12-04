@@ -1,0 +1,32 @@
+<?xml version="1.0"?><project>
+  <parent>
+    <artifactId>org.beamfoundry.bundles.spring-dm.iandt-bundles</artifactId>
+    <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+    <version>1.3.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+  <artifactId>org.beamfoundry.bundles.spring-dm.iandt.trivial-tests</artifactId>
+  <packaging>jar</packaging>
+  <name>Spring DM Test Bundle: Simple test that uses trivial bundle</name>
+  <description>Contains a single test case that exercises function in 
+   org.springframework.osgi.trivial bundle. Used as a basic proof of 
+   concept for the test harness support.</description>
+  <dependencies>
+
+    <dependency>
+      <groupId>org.beamfoundry.bundles.spring-dm.iandt</groupId>
+      <artifactId>org.beamfoundry.bundles.spring-dm.iandt.trivial</artifactId>
+      <version>${project.parent.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  
+    <!-- JUnit is required at build time not just test time -->
+    <dependency>
+	  <groupId>org.junit</groupId>
+	  <artifactId>com.springsource.junit</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+</project>
