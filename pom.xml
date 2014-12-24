@@ -26,6 +26,12 @@
 	<version>1.3.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<parent>
+		<groupId>org.beamfoundry.bundles</groupId>
+		<artifactId>org.beamfoundry.bundles.bundles-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
 	<name>BeamFoundry :: spring-osgi</name>
 	<description>This project provides spring-dm 1.2+ component to Apache Karaf for Spring version 4 and above.</description>
 	<url>https://github.com/BeamFoundry/spring-osgi</url>
