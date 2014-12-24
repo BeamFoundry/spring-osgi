@@ -21,12 +21,6 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.beamfoundry.bundles</groupId>
-		<artifactId>org.beamfoundry.bundles.bundles-parent</artifactId>
-		<version>1.0.0</version>
-	</parent>
-
 	<groupId>org.beamfoundry.bundles.spring-osgi</groupId>
 	<artifactId>org.beamfoundry.bundles.spring-osgi</artifactId>
 	<version>1.3.0-SNAPSHOT</version>
