@@ -14,7 +14,7 @@
 	<groupId>org.springframework.osgi</groupId>
 	<artifactId>catalina.osgi</artifactId>
 	<packaging>bundle</packaging>
-	<version>5.5.23-SNAPSHOT</version>
+	<version>5.5.23</version>
 	<name>Apache Tomcat Catalina Container (OSGi version)</name>
 
 	<properties>

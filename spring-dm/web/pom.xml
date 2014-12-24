@@ -23,7 +23,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     
     <!-- jetty artifact version -->
 	<jetty.version>6.1.9</jetty.version>
-	<catalina.version>5.5.23-SNAPSHOT</catalina.version>
+	<catalina.version>5.5.23</catalina.version>
 
 
 	<!-- minimal servlet version -->

@@ -30,7 +30,7 @@
     <artifactId>org.beamfoundry.bundles.spring-osgi.features</artifactId>
     <packaging>feature</packaging>
 
-	<name>1001listes :: spring-osgi :: Karaf Features</name>
+	<name>BeamFoundry :: spring-osgi :: Karaf Features</name>
 	
     <build>
         <pluginManagement>
