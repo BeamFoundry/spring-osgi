@@ -147,7 +147,7 @@ public class OsgiBundleResourceTest extends TestCase {
 	}
 
 	public void testFileWithNormalCharsInTheNameBeingResolved() throws Exception {
-		String name = "file:.project";
+		String name = "file:pom.xml";
 		FileSystemResourceLoader fileLoader = new FileSystemResourceLoader();
 		fileLoader.setClassLoader(getClass().getClassLoader());
 
