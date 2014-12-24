@@ -21,10 +21,10 @@
 	<feature name="spring-dm" version="${project.version}" description="Spring DM support" resolver="(obr)">
         <feature version="[4.0,4.1)">spring</feature>
         <bundle start-level="30" dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/3.0_1</bundle>
-        <bundle start-level="30">mvn:org.beamfoundry.bundles.spring-dm/org.beamfoundry.bundles.spring-dm-io/1.3.0-SNAPSHOT</bundle>
-        <bundle start-level="30">mvn:org.beamfoundry.bundles.spring-dm/org.beamfoundry.bundles.spring-dm-core/1.3.0-SNAPSHOT</bundle>
-        <bundle start-level="30">mvn:org.beamfoundry.bundles.spring-dm/org.beamfoundry.bundles.spring-dm-extender/1.3.0-SNAPSHOT</bundle>
-        <bundle start-level="30">mvn:org.beamfoundry.bundles.spring-dm/org.beamfoundry.bundles.spring-dm-annotation/1.3.0-SNAPSHOT</bundle>
+		<bundle start-level="30">mvn:org.beamfoundry.bundles.spring-dm/org.beamfoundry.bundles.spring-dm-io/${project.version}</bundle>
+		<bundle start-level="30">mvn:org.beamfoundry.bundles.spring-dm/org.beamfoundry.bundles.spring-dm-core/${project.version}</bundle>
+		<bundle start-level="30">mvn:org.beamfoundry.bundles.spring-dm/org.beamfoundry.bundles.spring-dm-extender/${project.version}</bundle>
+		<bundle start-level="30">mvn:org.beamfoundry.bundles.spring-dm/org.beamfoundry.bundles.spring-dm-annotation/${project.version}</bundle>
         <bundle start-level="30">mvn:org.apache.karaf.deployer/org.apache.karaf.deployer.spring/3.0.1</bundle>
         <bundle start-level="30">mvn:org.apache.karaf.bundle/org.apache.karaf.bundle.springstate/3.0.1</bundle>
     </feature>
