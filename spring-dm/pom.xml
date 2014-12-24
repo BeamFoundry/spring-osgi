@@ -17,7 +17,7 @@
   </description>
   <parent>
 	  <groupId>org.beamfoundry.bundles</groupId>
-	  <artifactId>org.beamfoundry.bundles-parent</artifactId>
+	  <artifactId>org.beamfoundry.bundles.bundles-parent</artifactId>
 	  <version>1.0.0-SNAPSHOT</version>
   </parent>
 
