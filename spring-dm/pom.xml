@@ -17,7 +17,7 @@
   <parent>
 	<groupId>org.beamfoundry.bundles.spring-osgi</groupId>
 	<artifactId>org.beamfoundry.bundles.spring-osgi</artifactId>
-  	<version>1.3.0</version>
+  	<version>1.3.0-SNAPSHOT</version>
   </parent>
 
   <properties>
@@ -36,7 +36,7 @@
 
    
     <spring.osgi.import.pkg>*</spring.osgi.import.pkg>
-    <spring.osgi.private.pkg />
+    <spring.osgi.private.pkg></spring.osgi.private.pkg>
     
     <!-- complete access to export/import properties -->
     <spring.osgi.export>!${spring.osgi.private.pkg}, ${spring.osgi.export.pkg}*;version=${spring.osgi.export.version}</spring.osgi.export>
@@ -86,13 +86,13 @@
    <jdk-classifier>jdk15</jdk-classifier>
    <source-jdk>1.5</source-jdk>
    <clover.ver>2.3.1</clover.ver>
-   <clover.argLine />
+   <clover.argLine></clover.argLine>
    <clover.skip>false</clover.skip>
    
    <findbugs.skip>false</findbugs.skip>
    
    <!-- security options for integration testing -->
-   <security.argLine />
+   <security.argLine></security.argLine>
    <policy.url>..${file.separator}policy.all</policy.url>
    
    <!-- bundlor settings -->
@@ -646,7 +646,7 @@ limitations under the License.
         </modules>
         <properties>
           <!-- use default mtc version for core -->
-          <jdk-classifier />
+          <jdk-classifier></jdk-classifier>
           <!-- enable bundlor -->
           <bundlor.enabled>true</bundlor.enabled>
         </properties>
