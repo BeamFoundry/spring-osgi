@@ -15,6 +15,11 @@
   have clients automatically bind to the appropriate one), and a dynamic
   service model.
   </description>
+  <parent>
+	  <groupId>org.beamfoundry.bundles</groupId>
+	  <artifactId>org.beamfoundry.bundles-parent</artifactId>
+	  <version>1.0.0-SNAPSHOT</version>
+  </parent>
 
   <properties>
     <!-- Spring version -->
@@ -909,6 +914,7 @@ Ignored-Existing-Headers:
     </plugins>
    </reporting>
 
+	<!--
     <distributionManagement>
         <downloadUrl>http://www.springframework.org/osgi/</downloadUrl>
         <site>
@@ -927,7 +933,7 @@ Ignored-Existing-Headers:
             <url>s3://maven.springframework.org/snapshot</url>
         </snapshotRepository>
     </distributionManagement>
-
+	-->
 
   <!-- ================================================ -->
   <!--            Repository Configuration              -->
