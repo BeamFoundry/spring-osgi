@@ -4,7 +4,6 @@
   <groupId>org.beamfoundry.bundles.spring-dm</groupId>
   <artifactId>org.beamfoundry.bundles.spring-dm</artifactId>
   <packaging>pom</packaging>
-  <version>1.3.0-SNAPSHOT</version>
   <name>Dynamic Modules for Spring4</name>
   <description>
   The Dynamic Modules for Spring4 project makes it easy to build Spring applications
@@ -18,6 +17,7 @@
   <parent>
 	<groupId>org.beamfoundry.bundles.spring-osgi</groupId>
 	<artifactId>org.beamfoundry.bundles.spring-osgi</artifactId>
+  	<version>1.3.0-SNAPSHOT</version>
   </parent>
 
   <properties>
