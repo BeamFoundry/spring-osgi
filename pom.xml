@@ -21,7 +21,7 @@
 
 	<groupId>org.beamfoundry.bundles.spring-osgi</groupId>
 	<artifactId>org.beamfoundry.bundles.spring-osgi</artifactId>
-	<version>1.3.1</version>
+	<version>1.3.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<parent>
@@ -43,7 +43,7 @@
 		<connection>scm:git:git@github.com:BeamFoundry/spring-osgi.git</connection>
 		<developerConnection>scm:git:git@github.com:BeamFoundry/spring-osgi.git</developerConnection>
 		<url>git@github.com:BeamFoundry/spring-osgi.git</url>
-	  <tag>org.beamfoundry.bundles.spring-osgi-1.3.1</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 	<build>
